@@ -6,10 +6,8 @@
 // ============================================
 
 import React from 'react';
-import { ThemeProvider } from '@mui/material/styles';
-import CssBaseline from '@mui/material/CssBaseline';
 import { AuthProvider } from '@/contexts/AuthContext';
-import { theme } from '@/theme';
+import ThemeRegistry from '@/components/ThemeRegistry';
 
 interface AppProviderProps {
   children: React.ReactNode;
@@ -17,11 +15,10 @@ interface AppProviderProps {
 
 export const AppProvider: React.FC<AppProviderProps> = ({ children }) => {
   return (
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
+    <ThemeRegistry>
       <AuthProvider>
         {children}
       </AuthProvider>
-    </ThemeProvider>
+    </ThemeRegistry>
   );
 };

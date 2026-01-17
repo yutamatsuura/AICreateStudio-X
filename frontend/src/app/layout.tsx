@@ -14,6 +14,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ja">
+      <head>
+        <meta name="emotion-insertion-point" content="" />
+      </head>
       <body>
         <AppProvider>
           {children}
